@@ -15,16 +15,17 @@
 
             return _instance;
         }
+
         private Log(string path)
         {
-
             fileLog = path;
-
         }
 
+        static int linea;
         public void Save(string message)
         {
-            File.AppendAllText(fileLog, message + Environment.NewLine);
+            linea = linea++;
+            File.AppendAllText(fileLog, linea.ToString() +" - " + message + Environment.NewLine);
         }
     }
 }

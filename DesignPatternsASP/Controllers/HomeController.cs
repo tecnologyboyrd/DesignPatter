@@ -9,22 +9,25 @@ namespace DesignPatternsASP.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IOptions<MySetups> _config;   
+        //private readonly IOptions<MySetups> _config;   
+        
         public HomeController(IOptions<MySetups> config)
         {
-            _config = config;
+            //_config = config;
         }
 
+        
         public IActionResult Index()
         {
-            Log.GetInstance("log.txt").Save("entro a Privacy");
+            Log.GetInstance("log.txt").Save("Entro a Home");
             //Log.GetInstance(_config.Value.PathLog).Save("entro a index");
             return View();
         }
 
         public IActionResult Privacy()
         {
-            Log.GetInstance("log.txt").Save("entro a Privacy");
+            Log.GetInstance("log.txt").Save("Entro a Privacy");
+
             return View();
         }
 
