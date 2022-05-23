@@ -20,12 +20,10 @@
         {
             fileLog = path;
         }
-
-        static int linea;
+        
         public void Save(string message)
         {
-            linea = linea++;
-            File.AppendAllText(fileLog, linea.ToString() +" - " + message + Environment.NewLine);
+            File.AppendAllText(fileLog, message + Environment.NewLine);
         }
     }
 }

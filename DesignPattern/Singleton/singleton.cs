@@ -10,7 +10,10 @@ namespace DesignPattern.Singleton
     {
         private readonly static Singleton _instance = new Singleton();
 
-        private Singleton(){}
+        private Singleton()
+        {
+
+        }
 
         public static Singleton Instance
         {

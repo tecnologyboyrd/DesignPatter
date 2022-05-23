@@ -4,29 +4,45 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
 using Tools;
+using DesignPatternsASP.Interfaces;
 
 namespace DesignPatternsASP.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly IOptions<MySetups> _config;   
-        
-        public HomeController(IOptions<MySetups> config)
+
+        private readonly ImySetup _config;
+
+        private readonly MySetups _configMartin;
+
+        private readonly LogLeo _logLeo = LogLeo.GetInstance("tomatulog.txt");
+
+
+        public HomeController(ImySetup cnf, IOptions<MySetups> x)
         {
-            //_config = config;
+            _config = cnf;
+
+            _configMartin = x.Value;
+
+
+
+            ViewBag.linea = 0;
         }
 
-        
+
         public IActionResult Index()
         {
-            Log.GetInstance("log.txt").Save("Entro a Home");
-            //Log.GetInstance(_config.Value.PathLog).Save("entro a index");
+            ViewBag.line = ViewBag.linea + 1;
+
+
+            _logLeo.SaveFile(Convert.ToString(ViewBag.linea) + " - " + "esta es una instania de afianzamiento del conocimiento con todo");
+            Log.GetInstance(_config.PathLog).Save("entro a index");            
             return View();
         }
 
         public IActionResult Privacy()
         {
-            Log.GetInstance("log.txt").Save("Entro a Privacy");
+            Log.GetInstance(_config.PathLog).Save("entro a Privacy");
 
             return View();
         }
