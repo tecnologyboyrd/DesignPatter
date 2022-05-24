@@ -12,11 +12,11 @@ builder.Services.AddControllersWithViews();
 //builder.Services.AddSingleton<MySetups>();
 
 
-//var pathLog = builder.Configuration.GetSection("MySetups").Get<MySetups>();
+//var pathLog = builder.Configuration.GetSection("MySetups").Get<MySetups2>();
 
-var pathLog = builder.Services.AddTransient<ImySetup, MySetups>();
+var pathLog = builder.Services.AddTransient<ImySetup, MySetups2>();
 
-builder.Services.Configure<MySetups>(builder.Configuration.GetSection("MySetups"));
+builder.Services.Configure<MySetups>(builder.Configuration.GetSection("MySetups2"));
 
 
 
