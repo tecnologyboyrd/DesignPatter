@@ -12,6 +12,9 @@ namespace DesignPatternsASP.Setups
         }
 
         public string PathLog2 { get; set; }
+        public decimal LocalPercentage { get; set; }
+        public decimal ForeignPercentage { get; set; }
+        public decimal Extra { get; set; }
 
     }
 }

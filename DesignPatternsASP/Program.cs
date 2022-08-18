@@ -2,6 +2,7 @@ using DesignPatternsASP.Interfaces;
 using DesignPatternsASP.Setups;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
+using Tools.Earn;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,14 +10,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-//builder.Services.AddSingleton<MySetups>();
-
-
-//var pathLog = builder.Configuration.GetSection("MySetups").Get<MySetups2>();
-
 var pathLog = builder.Services.AddTransient<ImySetup, MySetups2>();
 
 builder.Services.Configure<MySetups>(builder.Configuration.GetSection("MySetups2"));
+builder.Services.AddTransient((factory) =>
+{
+    return new LocalEarnFactory(builder.Configuration.GetSection("MySetups2").GetValue<decimal>("LocalPercentage"));
+});
+
+builder.Services.AddTransient((factory) =>
+{
+    return new ForeignEarnFactory(builder.Configuration.GetSection("MySetups2").GetValue<decimal>("ForeignPercentage"), builder.Configuration.GetSection("MySetups2").GetValue<decimal>("Extra"));
+});
 
 
 
