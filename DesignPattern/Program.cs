@@ -151,7 +151,6 @@ using DesignPattern.UnitOfWork;
 //}
 #endregion
 
-
 #region "Ejemplo de consola de UnitOfWork
 using (var context = new DesignPatternsContext())
 {
@@ -181,6 +180,8 @@ using (var context = new DesignPatternsContext())
 }
 
 #endregion
+
+
 
 
 

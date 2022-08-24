@@ -1,0 +1,17 @@
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\bin\Debug\net6.0\DesignPatterns.Repository.deps.json
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\bin\Debug\net6.0\DesignPatterns.Repository.runtimeconfig.json
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\bin\Debug\net6.0\DesignPatterns.Repository.dll
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\bin\Debug\net6.0\DesignPatterns.Repository.pdb
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\bin\Debug\net6.0\DesignPatters.Model.dll
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\bin\Debug\net6.0\DesignPatters.Model.pdb
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.csproj.AssemblyReference.cache
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.AssemblyInfoInputs.cache
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.AssemblyInfo.cs
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.csproj.CopyComplete
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.dll
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\refint\DesignPatterns.Repository.dll
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.pdb
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\DesignPatterns.Repository.genruntimeconfig.cache
+C:\Users\Leonard Perez\source\repos\DesignPatter\DesignPatterns.Repository\obj\Debug\net6.0\ref\DesignPatterns.Repository.dll
