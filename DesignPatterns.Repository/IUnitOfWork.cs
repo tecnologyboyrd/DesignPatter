@@ -13,6 +13,8 @@ namespace DesignPatterns.Repository
 
         public IRepository<Roles> Roles { get; }
 
+        public IRepository<UserRoleAssignment> UserroleAssignment { get; }
+
         public void Save();
 
     }

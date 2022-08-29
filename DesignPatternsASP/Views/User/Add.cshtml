@@ -1,0 +1,37 @@
+﻿@model DesignPatternsASP.Models.ViwModels.UserRoleViewModel
+
+<form asp-controller="User" asp-action="Add" method="post">
+    <div class="mb-3">
+        <label asp-for="UserFullName"></label>
+        <input class="form-control" asp-for="UserFullName"/>
+        <span asp-validation-for="UserFullName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UserName"></label>
+        <input class="form-control" asp-for="UserName"/>
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password"></label>
+        <input class="form-control" asp-for="Password"/>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="RoleId"></label>
+        <select class="form-control" asp-for="RoleId" asp-items="@ViewBag.Roleelect">
+            <option value="">---Select Rol---</option>
+        </select>
+         <span asp-validation-for="RoleId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="OtherRole"></label>        
+        <input class="form-control" asp-for="OtherRole"/>
+        <span asp-validation-for="OtherRole" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

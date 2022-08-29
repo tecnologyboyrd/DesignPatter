@@ -16,6 +16,8 @@ namespace DesignPatterns.Repository
 
         private IRepository<Roles> _roles;
 
+        private IRepository<UserRoleAssignment> _UserRoleAssignment;
+
 
         public UnitOfWork(DesignPatternsContext Context)
         {
@@ -38,6 +40,14 @@ namespace DesignPatterns.Repository
                 return _roles == null ? _roles = new Repository<Roles>(_context) : _roles;
             }
         }        
+
+        public IRepository<UserRoleAssignment> UserroleAssignment
+        {
+            get
+            {
+                return _UserRoleAssignment == null ? _UserRoleAssignment = new Repository<UserRoleAssignment>(_context) : _UserRoleAssignment;
+            }
+        }
 
         public void Save()
         {

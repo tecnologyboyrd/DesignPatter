@@ -12,8 +12,10 @@ namespace DesignPatters.Model.Data
     public partial class Roles
     {
         public int AutoSec { get; set; }
+
         [Key]
         public Guid RoleId { get; set; }
+
         [StringLength(30)]
         [Unicode(false)]
         public string Description { get; set; }
