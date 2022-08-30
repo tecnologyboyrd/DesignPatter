@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatternsASP", "Design
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{5480F839-66B3-4009-BFE1-246F0A0162F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatters.Model", "DesignPatters.Model\DesignPatters.Model.csproj", "{7168399F-62BC-4078-94F2-3F8F954A8EE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatters.Model", "DesignPatters.Model\DesignPatters.Model.csproj", "{7168399F-62BC-4078-94F2-3F8F954A8EE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Repository", "DesignPatterns.Repository\DesignPatterns.Repository.csproj", "{8839FC35-399F-417E-895D-9E932CB85BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Repository", "DesignPatterns.Repository\DesignPatterns.Repository.csproj", "{8839FC35-399F-417E-895D-9E932CB85BA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
