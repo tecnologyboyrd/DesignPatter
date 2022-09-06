@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Repository;
 using DesignPatternsASP.Models.ViwModels;
+using DesignPatternsASP.Strategy;
 using DesignPatters.Model.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -32,9 +33,7 @@ namespace DesignPatternsASP.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            var Role = _unitOfWork.Roles.Get();
-
-            ViewBag.Roleelect = new SelectList(Role, "RoleId", "Description");
+            GetRoleData();
 
             return View();
         }
@@ -42,53 +41,26 @@ namespace DesignPatternsASP.Controllers
         [HttpPost]
         public IActionResult Add(UserRoleViewModel UserRoleVm)
         {
-
-            var Roleselect = _unitOfWork.Roles.Get();
-
             if (!ModelState.IsValid)
             {
-                ViewBag.Roleelect = new SelectList(Roleselect, "RoleId", "Description");
+                GetRoleData();
+
+                return View ("Add", UserRoleVm);
             }
 
-            var User = new Users();
+            var context = UserRoleVm.RoleId == null ? new UserContext(new UserWithroleStrategy()):new UserContext(new UserStrategy());
 
-            var UrA = new UserRoleAssignment();
-
-            var Role = new Roles();
-
-            User.UserId = Guid.NewGuid();
-            User.UserFullName = UserRoleVm.UserFullName;
-            User.UserName = UserRoleVm.UserName;
-            User.Password = UserRoleVm.Password;
-            UrA.UserId = User.UserId;
-
-            _unitOfWork.Users.Add(User);
-
-
-            if (UserRoleVm.RoleId == null)
-            {
-                Role.RoleId = Guid.NewGuid();
-                Role.Description = UserRoleVm.OtherRole;
-                UrA.RolId = Role.RoleId;
-
-                _unitOfWork.Roles.Add(Role);
-            }
-            else
-            {
-                Role.RoleId = (Guid)UserRoleVm.RoleId;
-                UrA.RolId = Role.RoleId;
-            }            
-
-            
-            UrA.UserRoleAssignmentId = Guid.NewGuid();
-
-            _unitOfWork.UserroleAssignment.Add(UrA);
-
-            _unitOfWork.Save();
+            context.Add(UserRoleVm, _unitOfWork);
 
             return RedirectToAction("Index");
         }
 
-
+        #region HELPERS
+        private void GetRoleData()
+        {
+            var Roleselect = _unitOfWork.Roles.Get();
+            ViewBag.Roleelect = new SelectList(Roleselect, "RoleId", "Description");
+        }
+        #endregion
     }
 }

@@ -25,6 +25,6 @@ namespace DesignPatternsASP.Models.ViwModels
         [StringLength(30)]
         [Unicode(false)]
         [Display(Name = "New Rol")]
-        public string OtherRole { get; set; }
+        public string? OtherRole { get; set; }
     }
 }
