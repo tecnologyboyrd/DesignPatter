@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DesignPattern;
+using DesignPattern.BuilderPatterm;
 using DesignPattern.FactoryPattern;
 using DesignPattern.Models;
 using DesignPattern.Singleton;
@@ -151,33 +152,57 @@ using DesignPattern.UnitOfWork;
 //}
 #endregion
 
-#region "Ejemplo de consola de UnitOfWork
-using (var context = new DesignPatternsContext())
-{
-    var unitOfWork = new UnitOfWork(context);
+#region "Ejemplo de consola de UnitOfWork"
+//using (var context = new DesignPatternsContext())
+//{
+//    var unitOfWork = new UnitOfWork(context);
 
-    var users = unitOfWork.Users;
+//    var users = unitOfWork.Users;
 
-    var user = new User()
-    {
-        UserFullName = "Vivian Perez",
-        UserName = "vperez",
-        Password = "Candy"
-    };
+//    var user = new User()
+//    {
+//        UserFullName = "Vivian Perez",
+//        UserName = "vperez",
+//        Password = "Candy"
+//    };
 
-    users.Add(user);
-        
-    var roles = unitOfWork.Roles;
+//    users.Add(user);
 
-    var role = new Role()
-    {
-        Description = "Consultor"
-    };
+//    var roles = unitOfWork.Roles;
 
-    roles.Add(role);
+//    var role = new Role()
+//    {
+//        Description = "Consultor"
+//    };
 
-    unitOfWork.Save();
-}
+//    roles.Add(role);
+
+//    unitOfWork.Save();
+//}
+
+#endregion
+
+#region PreparedDrink literal sample
+
+var builder = new PreparedAlcoholicDrinkConcreteBuilder();
+
+var director = new Director(builder);
+
+director.PrepareFrutPonch();
+
+var preparedDrink = builder.GetPreparedDrink();
+
+Console.WriteLine(preparedDrink.result);
+
+
+
+builder.Reset();
+
+director.PreparePinaColada();
+
+var preparedDrink1 = builder.GetPreparedDrink();
+
+Console.WriteLine(preparedDrink1.result);
 
 #endregion
 
