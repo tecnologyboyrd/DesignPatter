@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class=" col-8 offset-2">
+        <div class="mb-3">
+            <select id="optionFile" class="form-control">
+                <option value="1">JSon</option>>
+                <option value="2">Pipe</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn btn-success" onclick="generate();">Generate</button>
+    </div>
+</div>
+
+<script>
+    function generate() {  
+        var select = document.getElementById("optionFile");
+        var value = select.options[select.selectedIndex].value;   
+        
+        fetch("@Url.Content("/FileGenerator/CreateFile")" + "?optionFile=" + value)
+            .then(res => res.json())
+            .then(json => alert(json));            
+            
+    }
+</script>
